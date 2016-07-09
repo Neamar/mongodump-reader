@@ -1,5 +1,6 @@
 "use strict";
 
+var fs = require("fs");
 var bsonize = require("bsonize");
 var bson = require('bson').BSONPure.BSON;
 
@@ -8,7 +9,7 @@ var bson = require('bson').BSONPure.BSON;
  * However the default Mongo BSON library does not allow for this, and only returns the first item
  * (or crash, depending on the version)
  */
-module.exports = function(bsonFileContent) {
+function parseBuffer(bsonFileContent) {
   var r = [];
 
   var buffer = bsonFileContent;
@@ -23,4 +24,21 @@ module.exports = function(bsonFileContent) {
   }
 
   return r;
+}
+
+module.exports = function(bsonFileContent, cb) {
+  if(Buffer.isBuffer(bsonFileContent)) {
+    process.nextTick(function() {
+      cb(null, parseBuffer(bsonFileContent));
+    });
+  }
+  else {
+    fs.readFile(bsonFileContent, function(err, data) {
+      if(err) {
+        return cb(err);
+      }
+
+      cb(null, parseBuffer(data));
+    });
+  }
 };
