@@ -1,0 +1,29 @@
+{
+  "name": "mongodump-reader",
+  "version": "1.0.0",
+  "description": "Read mongodump BSON file in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neamar/mongodump-reader.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongodump",
+    "bson",
+    "deserialize"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Neamar/mongodump-reader/issues"
+  },
+  "homepage": "https://github.com/Neamar/mongodump-reader#readme",
+  "dependencies": {
+    "bson": "^0.2.21",
+    "bsonize": "^1.0.0"
+  }
+}
