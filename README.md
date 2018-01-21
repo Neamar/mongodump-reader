@@ -1,5 +1,7 @@
 # Mongodump file reader
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Neamar/mongodump-reader.svg)](https://greenkeeper.io/)
+
 Mongodump uses a special file format when backing up its content (concatenating each item without any separator, save for the standard `\x00` at the end of the object)
 
 This small library returns an array of all the items in the mongodump file.
