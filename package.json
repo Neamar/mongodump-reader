@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Neamar/mongodump-reader#readme",
   "dependencies": {
-    "bson": "^0.2.21",
+    "bson": "^2.0.0",
     "bsonize": "^1.0.0"
   }
 }
